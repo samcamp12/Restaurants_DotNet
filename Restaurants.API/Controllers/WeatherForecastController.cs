@@ -2,24 +2,34 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Restaurants.API.Controllers;
 
+public class TemperatureRequest
+{
+    public int MaxTemp { get; set; }
+    public int MinTemp { get; set; }
+}
+
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class WeatherForecastController : ControllerBase
 {
-    private static readonly string[] Summaries =
-    [
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    ];
-
-    [HttpGet]
-    public IEnumerable<WeatherForecast> Get()
+    private readonly IWeatherForecastService _weatherForecastService;
+    
+    public WeatherForecastController(IWeatherForecastService WeatherForecastService)
     {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        {
-            Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-        })
-        .ToArray();
+        _weatherForecastService = WeatherForecastService;
     }
+
+    [HttpPost("generate")]
+    public ActionResult<IEnumerable<WeatherForecast>> generate([FromBody] TemperatureRequest request, [FromQuery] int count)
+    {   
+        var MaxTemp = request.MaxTemp;
+        var MinTemp = request.MinTemp;
+        if (MinTemp > MaxTemp || count < 1)
+        {
+            return BadRequest("wrong parameters");
+        }
+        var result = _weatherForecastService.Get(count, MinTemp, MaxTemp);
+        return Ok(result);
+    }
+
 }
