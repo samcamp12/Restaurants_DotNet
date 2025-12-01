@@ -40,3 +40,20 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants
 GET {{Restaurants.API_HostAddress}}/api/restaurants/5
 
 ###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+{
+  "name": "The Golden Spoon",
+  "description": "Fine dining restaurant with modern European cuisine",
+  "category": "Fine Dining",
+  "hasDelivery": true,
+  "contactEmail": "contact@goldenspoon.com",
+  "contactNumber": "+1-555-0123",
+  "street": "123 Main Street",
+  "city": "New York",
+  "postalCode": "10001"
+}
+
+###
