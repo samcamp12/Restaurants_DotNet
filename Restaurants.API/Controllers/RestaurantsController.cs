@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Restaurants.Application.Dishes.Dtos;
 using Restaurants.Application.Restaurants;
 
@@ -27,6 +28,10 @@ public class RestaurantsController(IRestaurentsService restaurantsService) : Con
     [HttpPost]
     public async Task<IActionResult> CreateRestaurant([FromBody]CreateRestaurantDto createRestaurantDto)
     {
+        if(!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
         int id = await restaurantsService.Create(createRestaurantDto);
         // nameof(GetById): the url for the created result
         return CreatedAtAction(nameof(GetById), new { id }, null);
