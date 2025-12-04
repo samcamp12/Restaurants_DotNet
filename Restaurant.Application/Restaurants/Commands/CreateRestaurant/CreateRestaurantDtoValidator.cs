@@ -1,12 +1,10 @@
 ﻿using FluentValidation;
-using Restaurants.Application.Restaurants.Dtos;
+namespace Restaurants.Application.Restaurants.Commands.CreateRestaurant;
 
-namespace Restaurants.Application.Restaurants.Validators;
-
-public class CreateRestaurantDtoValidator: AbstractValidator<CreateRestaurantDto>
+public class CreateRestaurantCommandValidator : AbstractValidator<CreateRestaurantCommand>
 {
     private readonly List<string> validCategories = ["Italian", "American", "Fast Food", "Find Dining", "Indian", "Japanese"];
-    public CreateRestaurantDtoValidator()
+    public CreateRestaurantCommandValidator()
     {
         RuleFor(x => x.Name)
             .NotEmpty().WithMessage("Name is required")
@@ -22,7 +20,7 @@ public class CreateRestaurantDtoValidator: AbstractValidator<CreateRestaurantDto
                 {
                     context.AddFailure("Category", "Invalid category.");
                 }
-            })
+            });
         RuleFor(x => x.ContactEmail)
             .EmailAddress().When(x => !string.IsNullOrEmpty(x.ContactEmail))
             .WithMessage("Please provide a valid email address");
