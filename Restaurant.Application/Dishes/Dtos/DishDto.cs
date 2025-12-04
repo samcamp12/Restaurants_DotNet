@@ -1,7 +1,4 @@
-﻿using Restaurants.Application.Dtos;
-using Restaurants.Domain.Entities;
-
-namespace Restaurants.Application.Dishes.Dtos;
+﻿namespace Restaurants.Application.Dishes.Dtos;
 
 public class DishDto
 {
