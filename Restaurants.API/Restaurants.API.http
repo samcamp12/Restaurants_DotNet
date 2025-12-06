@@ -45,15 +45,20 @@ POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
 
 {
-  "name": "The Golden Spoon",
+  "name": "The Golden Spoon 2",
   "description": "Fine dining restaurant with modern European cuisine",
-  "category": "Fine Dining",
+  "category": "Japanese",
   "hasDelivery": true,
   "contactEmail": "contact@goldenspoon.com",
-  "contactNumber": "+1-555-0123",
+  "contactNumber": "997-555-0123",
   "street": "123 Main Street",
   "city": "New York",
   "postalCode": "10001"
 }
+
+###
+
+@id=8
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/{{id}}
 
 ###
