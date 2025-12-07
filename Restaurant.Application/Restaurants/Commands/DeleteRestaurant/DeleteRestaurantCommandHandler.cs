@@ -1,11 +1,10 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Logging;
-using Restaurants.Application.Restaurants.Commands.CreateRestaurant;
 using Restaurants.Domain.Repositories;
 
 namespace Restaurants.Application.Restaurants.Commands.DeleteRestaurant;
 
-public class DeleteRestaurantCommandHandler(ILogger<CreateRestaurantCommandHandler> logger,
+public class DeleteRestaurantCommandHandler(ILogger<DeleteRestaurantCommandHandler> logger,
     
     IRestaurantsRepository restaurantsRepository) : IRequestHandler<DeleteRestaurantCommand, bool>
 {

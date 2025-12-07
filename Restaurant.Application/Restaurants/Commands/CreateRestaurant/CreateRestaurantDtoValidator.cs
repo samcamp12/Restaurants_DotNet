@@ -7,8 +7,7 @@ public class CreateRestaurantCommandValidator : AbstractValidator<CreateRestaura
     public CreateRestaurantCommandValidator()
     {
         RuleFor(x => x.Name)
-            .NotEmpty().WithMessage("Name is required")
-            .MaximumLength(100).WithMessage("Name cannot exceed 100 characters");
+            .Length(3, 50).WithMessage("Name must be between 3 and 50 characters");
         RuleFor(x => x.Description)
             .NotEmpty().WithMessage("Description is required");
         RuleFor(x => x.Category)
