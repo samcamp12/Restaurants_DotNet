@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.API", "Restaura
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.Domain", "Restaurant.Domain\Restaurants.Domain.csproj", "{F8B0BF8F-0921-443B-94FF-F43EFD778897}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurant.Application", "Restaurant.Application\Restaurant.Application.csproj", "{FE4D187E-B6F3-4971-9FDD-A0B193CB4D58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.Application", "Restaurant.Application\Restaurants.Application.csproj", "{FE4D187E-B6F3-4971-9FDD-A0B193CB4D58}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.Infrastructure", "Restaurants.Infrastructure\Restaurants.Infrastructure.csproj", "{DAE131C4-A23E-4F6C-9E42-E1506052D1B4}"
 EndProject
