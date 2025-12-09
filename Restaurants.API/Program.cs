@@ -13,9 +13,7 @@ builder.Configuration.GetConnectionString("RestaurantDb");
 
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Host.UseSerilog((context, config) => config
-    .MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Warning)
-    .MinimumLevel.Override("Microsoft.EntityFrameworkCore", Serilog.Events.LogEventLevel.Information)
-    .WriteTo.Console(outputTemplate: "[{Timestamp:dd-MM HH:mm:ss} {Level:u3}] |{SourceContext}| {NewLine}{Message:lj}{NewLine}{Exception}")
+    .ReadFrom.Configuration(context.Configuration)
 );
 
 builder.Services.AddApplication();
