@@ -8,7 +8,6 @@
 GET {{Restaurants.API_HostAddress}}/api/restaurants
 
 ###
-
 GET {{Restaurants.API_HostAddress}}/api/restaurants/7
 
 ###
@@ -30,18 +29,28 @@ Content-Type: application/json
 
 ###
 
-@id=81
-DELETE {{Restaurants.API_HostAddress}}/api/restaurants/{{id}}
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/7
 
 ###
 
-@id=7
-Patch {{Restaurants.API_HostAddress}}/api/restaurants/{{id}}
+Patch {{Restaurants.API_HostAddress}}/api/restaurants/5
 Content-Type: application/json
 
 {
   "name": "The Golden Spoon 2",
   "description": "Fine dining restaurant with modern European cuisine"
 }
+
+###
+@restaurantId=17
+POST {{Restaurants.API_HostAddress}}/api/restaurants/{{restaurantId}}/dishes
+Content-Type: application/json
+
+  {
+    "name": "Truffle Mushroom Risotto",
+    "description": "Creamy Arborio rice with wild mushrooms, parmesan, and a touch of black truffle oil.",
+    "price": 22.50,
+    "kiloCalorities": 780
+  }
 
 ###
