@@ -11,4 +11,5 @@ public class DishRepository(RestaurantDbContext dbContext) : IDishesRepository
         await dbContext.SaveChangesAsync();
         return dish.Id;
     }
+
 }
