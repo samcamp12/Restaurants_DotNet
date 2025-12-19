@@ -16,12 +16,7 @@ public class GetDishesByRestaurantQueryHandler(ILogger<GetDishesByRestaurantQuer
     public async Task<IEnumerable<DishDto>> Handle(GetDishesByRestaurantQuery request, CancellationToken cancellationToken)
     {
         logger.LogInformation("Querying dishes for RestaurantId: {RestaurantId}", request.RestaurantId);
-        var restaurant = await restaurantsRepository.GetOneByIdAsync(request.RestaurantId);
-        if (restaurant == null)
-        {
-            throw new NotFoundException(nameof(Restaurant), request.RestaurantId.ToString());
-        }
-
+        var restaurant = await restaurantsRepository.GetOneByIdAsync(request.RestaurantId) ?? throw new NotFoundException(nameof(Restaurant), request.RestaurantId.ToString());
         var results = mapper.Map<IEnumerable<DishDto>>(restaurant.Dishes);
 
         return results;
