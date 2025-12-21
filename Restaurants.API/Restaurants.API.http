@@ -8,7 +8,7 @@
 GET {{Restaurants.API_HostAddress}}/api/restaurants
 
 ###
-GET {{Restaurants.API_HostAddress}}/api/restaurants/9
+GET {{Restaurants.API_HostAddress}}/api/restaurants/6
 
 ###
 
@@ -16,7 +16,7 @@ POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
 
 {
-  "name": "Italian",
+  "name": "Italian 2",
   "description": "Fine dining restaurant with modern European cuisine",
   "category": "Italian",
   "hasDelivery": true,
@@ -42,7 +42,7 @@ Content-Type: application/json
 }
 
 ###
-@restaurantId=9
+@restaurantId=10
 POST {{Restaurants.API_HostAddress}}/api/restaurants/{{restaurantId}}/dishes
 Content-Type: application/json
 
@@ -55,14 +55,14 @@ Content-Type: application/json
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/7/dishes/9
+GET {{Restaurants.API_HostAddress}}/api/restaurants/6/dishes/8
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/7/dishes
+GET {{Restaurants.API_HostAddress}}/api/restaurants/9/dishes
 
 ###
 
-DELETE {{Restaurants.API_HostAddress}}/api/restaurants/9/dishes
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/10/dishes
 
 ###
