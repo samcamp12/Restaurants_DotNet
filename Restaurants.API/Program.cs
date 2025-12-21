@@ -1,5 +1,6 @@
 using Restaurants.API.Middleware;
 using Restaurants.Application.Extensions;
+using Restaurants.Domain.Entities;
 using Restaurants.Infrastructure.Extensions;
 using Restaurants.Infrastructure.Seeders;
 using Serilog;
@@ -43,6 +44,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
 app.UseMiddleware<RequestTimeLoggingMiddleware>();
+
+
+app.MapIdentityApi<User>();
 
 app.UseHttpsRedirection();
 
