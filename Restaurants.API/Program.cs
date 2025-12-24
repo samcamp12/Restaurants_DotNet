@@ -1,3 +1,4 @@
+using Microsoft.OpenApi;
 using Restaurants.API.Middleware;
 using Restaurants.Application.Extensions;
 using Restaurants.Domain.Entities;
@@ -10,8 +11,25 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("bearerAuth", new OpenApiSecurityScheme
+    {
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT"
+    });
+    
+    options.AddSecurityRequirement(doc =>
+    {
+        var requirement = new OpenApiSecurityRequirement();
+        var schemeReference = new OpenApiSecuritySchemeReference("bearerAuth", doc);
+        requirement.Add(schemeReference, new List<string>());
+        return requirement;
+    });
+});
 
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<ErrorHandlingMiddleware>();
 builder.Services.AddScoped<RequestTimeLoggingMiddleware>();
 
@@ -46,7 +64,7 @@ app.UseMiddleware<ErrorHandlingMiddleware>();
 app.UseMiddleware<RequestTimeLoggingMiddleware>();
 
 
-app.MapIdentityApi<User>();
+app.MapGroup("api/identity").MapIdentityApi<User>();
 
 app.UseHttpsRedirection();
 
