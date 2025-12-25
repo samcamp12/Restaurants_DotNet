@@ -1,4 +1,4 @@
-using Microsoft.OpenApi;
+using Restaurants.API.Extensions;
 using Restaurants.API.Middleware;
 using Restaurants.Application.Extensions;
 using Restaurants.Domain.Entities;
@@ -10,35 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
-builder.Services.AddSwaggerGen(options =>
-{
-    options.AddSecurityDefinition("bearerAuth", new OpenApiSecurityScheme
-    {
-        Type = SecuritySchemeType.Http,
-        Scheme = "bearer",
-        BearerFormat = "JWT"
-    });
-    
-    options.AddSecurityRequirement(doc =>
-    {
-        var requirement = new OpenApiSecurityRequirement();
-        var schemeReference = new OpenApiSecuritySchemeReference("bearerAuth", doc);
-        requirement.Add(schemeReference, new List<string>());
-        return requirement;
-    });
-});
-
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddScoped<ErrorHandlingMiddleware>();
-builder.Services.AddScoped<RequestTimeLoggingMiddleware>();
+builder.AddPresentation();
 
 builder.Configuration.GetConnectionString("RestaurantDb");
 
 builder.Services.AddInfrastructure(builder.Configuration);
-builder.Host.UseSerilog((context, config) => config
-    .ReadFrom.Configuration(context.Configuration)
-);
 
 builder.Services.AddApplication();
 
