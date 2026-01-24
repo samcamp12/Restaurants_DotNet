@@ -8,6 +8,7 @@ using Restaurants.Application.Restaurants.Dtos;
 using Restaurants.Application.Restaurants.Queries.GetAllRestaurants;
 using Restaurants.Application.Restaurants.Queries.GetRestaurantById;
 using Restaurants.Domain.Constants;
+using Restaurants.Infrastructure.Authorization;
 
 namespace Restaurants.API.Controllers;
 
@@ -24,9 +25,9 @@ public class RestaurantsController(IMediator mediator) : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [Authorize(Policy = PolicyNames.HasNationlity)]
     public async Task<ActionResult<RestaurantDto>> GetById([FromRoute] int id)
     {
-        var userId = User.Claims.FirstOrDefault(c => c.Type == "<id claim type>")!.Value;
         var restaurant = await mediator.Send(new GetRestaurantByIdQuery(id));
         if (restaurant is null) return NotFound();
 

@@ -1,7 +1,7 @@
 @host = https://localhost
 @port = 7254
 @Restaurants.API_HostAddress = https://localhost:7254
-@token = CfDJ8JY-0T_h_shGpkwETFYpi1tbVi9SPx2cBDiRAUZYv-ElYFwdITC-_SGD4puVx8K686ZnLdz3SeDEGhNnbF8qT8GwlUDW_7yhRbE4UgFBUS7juaiXstlvQIBMii-gLVD-UFSnVs6RQTPp4NoOlZbi0v1-bWFkKUeCSjFVRMrifFwDR6ucN33USAz5O9A_UAcPrQ4KD2ypNwqqMTClX8KTcLa0eJf9BMN3Per9FG95bfjlO5U7yKzmEEfTuMJ3BckiDSvHA0c3cK8--bQDgaH28ntah1KV96GCYNJKoasRN6YJxP1HIvz9w6nFdFiHrtuE5qGRSVqQMvguVpg_g2t_jt6E5QC6Aju1anL5rfNT_g_1zql_8iV67Aza23h0zF6FnzaHsCR68UG1tefn2Jz1M4ZC8mq0qLScrI61TotPLJekC4AU-9fJQ1BtIVbOVJdiVGVkxtpV02Um-d2oVWnb2eoQgTIcj1_Ru6TWhPJDM2sBWbCIjuF4vo1FUYnSQjLqZDzXZrPRq_5n9WVYkb52TbYlm3KbkSQJWiFBVT8S85wgZcQX3gzyF6kVFaicl7-XJ71iDy_u8iYyKO-Z0eXzwWWFWJ4pZjzpDUZJpRRQA5srf41tONOjkh_cmGX2VhQ_TVr01YZeHZ_O258yUkveSIQhVaomEY1G49EqGTulVv2VDDYnHSsd88T1mB27rDVS4g
+@token = CfDJ8JY-0T_h_shGpkwETFYpi1sFquRawI9ynBkyINpstNGTw6pzlWYz5AKrTQpb-4aAXrrsgwnCXiLpKo039R2zaO_mJNLETcv_3Y3xSjuaDDRw6zNwnH02d_-rvEnbATWvJIR0wquwOhrjhWZ5sVrTfsRu5kcQEAT9BDOSeRsH7-BxipYgrnCzOEzkLzUaXfstII6ggwgtqPsokKAjvnvREScw_Ukpr2jftFekYgtEgTl7h5h_N7b8m_M1dALX299nWIx08VIK_ZTHforO0ZviJ12BV1DqPQFyX5apB_-heUb5J_ghwlO0-i7MTVl1sJjOhjKIMtfIqlVvzg6G8cMqDKipKw1VtvWBbSI4NcslMabY8It1mOmnE2G0k7AUK11vGoYhrQvla9WqEHFtnz6wsQtp3qb7MzsTqW7YPQwwFYl4apS1jgdkxYZSVHNijw7j3jIIvu6DH2bOfkE1LasC06eLfL5WX8D7CI8Rg6FGc4j4adlGPVhf-Asxjc3MUcFTreabRaf53bTfSfELg3lMs17GC9xbvDcq_Jr9Jr4NicI7B2h02YK_T0RAm7--LQ3-9Xgz2IwIz9SWMNOqFgACEP-JjHCiz2qBad7l7wQGlxCq85DmZbBH6eyoqqfg9sTlQpQpLwLrVawrTh9zUiB_xQxYW9NhbmAk2yMzwKeewiJtGYvQ9M3j13KqfrupD6MvQX-FdlGkVh_vAgw54ozU26Zvb9DC78Klidn3Zr5B-0KlYNjpO7xnQx7WZy7xiLa6aIORpqB9D8lkjcCIRq-GQKNEez4zoiyYs0nPpxbz4nokqdTtf8QD2p96ixdZa93VmDQzYtM4m3V6lV_14eT1vlTsGnjb1DRvpxnkcBAIgQ9I-mBHnt4TRBy-fSuevghiGg
 
 ###
 
@@ -10,6 +10,7 @@ Authorization: Bearer {{token}}
 
 ###
 GET {{Restaurants.API_HostAddress}}/api/restaurants/6
+Authorization: Bearer {{token}}
 
 ###
 
@@ -84,6 +85,6 @@ Content-Type: application/json
 POST {{Restaurants.API_HostAddress}}/api/identity/login
 Content-Type: application/json
 {
-  "email": "owner@test.com",
+  "email": "user123@example.com",
   "password": "Abc123!!!"
 }
