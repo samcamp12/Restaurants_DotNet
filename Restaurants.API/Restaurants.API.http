@@ -1,7 +1,7 @@
 @host = https://localhost
 @port = 7254
 @Restaurants.API_HostAddress = https://localhost:7254
-@token = CfDJ8JY-0T_h_shGpkwETFYpi1sFquRawI9ynBkyINpstNGTw6pzlWYz5AKrTQpb-4aAXrrsgwnCXiLpKo039R2zaO_mJNLETcv_3Y3xSjuaDDRw6zNwnH02d_-rvEnbATWvJIR0wquwOhrjhWZ5sVrTfsRu5kcQEAT9BDOSeRsH7-BxipYgrnCzOEzkLzUaXfstII6ggwgtqPsokKAjvnvREScw_Ukpr2jftFekYgtEgTl7h5h_N7b8m_M1dALX299nWIx08VIK_ZTHforO0ZviJ12BV1DqPQFyX5apB_-heUb5J_ghwlO0-i7MTVl1sJjOhjKIMtfIqlVvzg6G8cMqDKipKw1VtvWBbSI4NcslMabY8It1mOmnE2G0k7AUK11vGoYhrQvla9WqEHFtnz6wsQtp3qb7MzsTqW7YPQwwFYl4apS1jgdkxYZSVHNijw7j3jIIvu6DH2bOfkE1LasC06eLfL5WX8D7CI8Rg6FGc4j4adlGPVhf-Asxjc3MUcFTreabRaf53bTfSfELg3lMs17GC9xbvDcq_Jr9Jr4NicI7B2h02YK_T0RAm7--LQ3-9Xgz2IwIz9SWMNOqFgACEP-JjHCiz2qBad7l7wQGlxCq85DmZbBH6eyoqqfg9sTlQpQpLwLrVawrTh9zUiB_xQxYW9NhbmAk2yMzwKeewiJtGYvQ9M3j13KqfrupD6MvQX-FdlGkVh_vAgw54ozU26Zvb9DC78Klidn3Zr5B-0KlYNjpO7xnQx7WZy7xiLa6aIORpqB9D8lkjcCIRq-GQKNEez4zoiyYs0nPpxbz4nokqdTtf8QD2p96ixdZa93VmDQzYtM4m3V6lV_14eT1vlTsGnjb1DRvpxnkcBAIgQ9I-mBHnt4TRBy-fSuevghiGg
+@token = CfDJ8JY-0T_h_shGpkwETFYpi1t4VO-sPEOD5BBmjnTcPuM1NzkIa3eq2b8ScCZcg3xj9NMnjMpU5wXTiA_3E7WmfGviNj3AWbleGYw8Rl8cctyrCshKr01GKDr_fXnjwqJNFqJuDnzOgO5XEjcmP6XSqvwcHTgiNb_Y6DoAW9CzjqZ2DYREhtnnA3C4lEKTd5jzjQktZSNQSI8a-IGb0bKsN6AwPbmn9JCCrhD3-PahpqC0-0hWDrZVDLWD6sTb5ik3Hbc3_KgKtgyD3xMhL3rlN-34T0QZqDgpUKQ-TEwJ4NqQTIxLgdIOOpeeLcB5-lfEVn4q2FRL_SesitriNTqLSZYXBttJTiRXT2ReulrVQsJCV3kl300GEsiuGyEt1_fSCp9tFKUCpdrvJy5fFlBHCkGYfmdmCbBfM9BRrBFfGS3rNhRzGw-4F_WdbFM7eRyoLCgo1Oe5uYzBFj_-a9YpUYGwyuY6nm_GViarT8SKIH9DDgpE-umXYv0DWHYZ5QT2vFJI_qkhCFJ52lcVXv1Ppk6nogPkFylL2tg7bFvHvEKX-VScMk6DRKvFtMZf4Ivt-0wDI5Wos0-g_lC-g1BVtSOF0uzOV8DDXZTXmI3xbIDqlh9J7O_flHYtsmWn5PsS9hETY-tO7aOKmx-aOXSqm--7YOFoA3E5waxzudeEWCrhXynXBJ7GymQ8QIsV7kOW0BPC3ipjzbSJl8fCj-NygHU548iCRIw8qJYpeDqvDE7VNEeB5JNXKvOpRzEPEzpf-YsaxSSWJYaibEsjrw2OeqSAMIAo0yhYA87BpVhDE7uh7uI4jSEWkO9zsvHSqJZGKtusSqeFWfNA4iXS_t6p1v8oAbwwXTbJTl_lkl_vINVBsuFeMzs5fknuakOH38Dh3A
 
 ###
 
@@ -59,11 +59,12 @@ Content-Type: application/json
 ###
 
 GET {{Restaurants.API_HostAddress}}/api/restaurants/6/dishes/8
-
+Authorization: Bearer {{token}}
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/9/dishes
-
+GET {{Restaurants.API_HostAddress}}/api/restaurants/6/dishes
+Authorization: Bearer {{token}}
+###
 ###
 
 DELETE {{Restaurants.API_HostAddress}}/api/restaurants/10/dishes
@@ -88,3 +89,15 @@ Content-Type: application/json
   "email": "user123@example.com",
   "password": "Abc123!!!"
 }
+
+###
+PATCH {{Restaurants.API_HostAddress}}/api/identity/user
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "nationality": "French",
+  "dateOfBirth": "2009-01-01"
+}
+
+###
