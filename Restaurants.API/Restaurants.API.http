@@ -1,7 +1,7 @@
 @host = https://localhost
 @port = 7254
 @Restaurants.API_HostAddress = https://localhost:7254
-@token = CfDJ8JY-0T_h_shGpkwETFYpi1t4VO-sPEOD5BBmjnTcPuM1NzkIa3eq2b8ScCZcg3xj9NMnjMpU5wXTiA_3E7WmfGviNj3AWbleGYw8Rl8cctyrCshKr01GKDr_fXnjwqJNFqJuDnzOgO5XEjcmP6XSqvwcHTgiNb_Y6DoAW9CzjqZ2DYREhtnnA3C4lEKTd5jzjQktZSNQSI8a-IGb0bKsN6AwPbmn9JCCrhD3-PahpqC0-0hWDrZVDLWD6sTb5ik3Hbc3_KgKtgyD3xMhL3rlN-34T0QZqDgpUKQ-TEwJ4NqQTIxLgdIOOpeeLcB5-lfEVn4q2FRL_SesitriNTqLSZYXBttJTiRXT2ReulrVQsJCV3kl300GEsiuGyEt1_fSCp9tFKUCpdrvJy5fFlBHCkGYfmdmCbBfM9BRrBFfGS3rNhRzGw-4F_WdbFM7eRyoLCgo1Oe5uYzBFj_-a9YpUYGwyuY6nm_GViarT8SKIH9DDgpE-umXYv0DWHYZ5QT2vFJI_qkhCFJ52lcVXv1Ppk6nogPkFylL2tg7bFvHvEKX-VScMk6DRKvFtMZf4Ivt-0wDI5Wos0-g_lC-g1BVtSOF0uzOV8DDXZTXmI3xbIDqlh9J7O_flHYtsmWn5PsS9hETY-tO7aOKmx-aOXSqm--7YOFoA3E5waxzudeEWCrhXynXBJ7GymQ8QIsV7kOW0BPC3ipjzbSJl8fCj-NygHU548iCRIw8qJYpeDqvDE7VNEeB5JNXKvOpRzEPEzpf-YsaxSSWJYaibEsjrw2OeqSAMIAo0yhYA87BpVhDE7uh7uI4jSEWkO9zsvHSqJZGKtusSqeFWfNA4iXS_t6p1v8oAbwwXTbJTl_lkl_vINVBsuFeMzs5fknuakOH38Dh3A
+@token = CfDJ8JY-0T_h_shGpkwETFYpi1sAWSdsa9HrzXSywYcplQGSP0r3NHG4PPAfPvOPTvlNWvd9Fjn_aoli0ImLaxKWCYHRM5DziazDloiNHXTj1-_o9cirNCanr89ze8up4KYIvFe4RP4_TbbWs5DJNov73xoswYq654SSKEv-epQeLVsT1j66zW7Fb37vGpaI2DUelhxxmO0sYawKXt-38CfZhfajMx_D3MiTLXqLnEPotnbiQHAJuvwvQWbjRumX6oENp0Zod_v9sBG6v40GTKs4qE9JJBcUscY0yki5tchNZvGkkvyTNBwS4DmZMwxvOJ_fj4KaUy9aesmO0CtaFUQCeztOyA1QsNQqK0BTV74J7Lq7IvVwZ9NOTHXgxEU8nfs_kAGPVnkqiB_BFsaKJbLrbX_LtHSZKfKcnFdHfvuOIP0ZZpkJnrgnYNOSs_wIkpNAwBUlyj_Qqb8vbaUcE6SwHNpidIYVwg4IALskdrC_Tg1GazKoAEEdzSoL2pvKQ6n_KQZlhxvDhtPLUJxE7tyvvYOHxSIwThg5XzeTD0QXSK0N8EZvJ-yitb1utux7K6Daw_CotlykWNY9fP5XPwsK649UqodpKqCaZhXA0Jjn3xLYUsjMCESOCQbTM_pbSBzp5h5Q0vSZiAsbpRP6FDHUYoq7fhK0fIcy5Hk5gbeuVhqy0C5a3s0W3eeyN1b0lXbCMykB5JVAqrZUj8NZEEBUAA7lIniN2MXbTot9-BYJ77KAs79quXJQK5EVjauldlE_ZEjHJBF18bhFVnUySpTG6VCqVCUVIBycEYPXGcmib_8OcW1RnsrJkKSq0P3_D6wG966n4lRyxnIwnHA-ERbZPw4s_pjUYntGJRnXxzTZwe6DxNETKzP0atCLS9f6PkcxTA
 
 ###
 
@@ -19,15 +19,15 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "name": "Italian 2",
-  "description": "Fine dining restaurant with modern European cuisine",
-  "category": "Italian",
+  "name": "Owner Restaurant",
+  "description": "A typical US diner",
+  "category": "American",
   "hasDelivery": true,
-  "contactEmail": "contact@goldenspoon.com",
-  "contactNumber": "997-555-0123",
-  "street": "123 Main Street",
+  "contactEmail": "contact@dinerA.com",
+  "contactNumber": "991-515-3333",
+  "street": "18 Main Street",
   "city": "New York",
-  "postalCode": "10001"
+  "postalCode": "10033"
 }
 
 ###
