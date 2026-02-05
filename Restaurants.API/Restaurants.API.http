@@ -1,7 +1,7 @@
 @host = https://localhost
 @port = 7254
 @Restaurants.API_HostAddress = https://localhost:7254
-@token = CfDJ8JY-0T_h_shGpkwETFYpi1sAWSdsa9HrzXSywYcplQGSP0r3NHG4PPAfPvOPTvlNWvd9Fjn_aoli0ImLaxKWCYHRM5DziazDloiNHXTj1-_o9cirNCanr89ze8up4KYIvFe4RP4_TbbWs5DJNov73xoswYq654SSKEv-epQeLVsT1j66zW7Fb37vGpaI2DUelhxxmO0sYawKXt-38CfZhfajMx_D3MiTLXqLnEPotnbiQHAJuvwvQWbjRumX6oENp0Zod_v9sBG6v40GTKs4qE9JJBcUscY0yki5tchNZvGkkvyTNBwS4DmZMwxvOJ_fj4KaUy9aesmO0CtaFUQCeztOyA1QsNQqK0BTV74J7Lq7IvVwZ9NOTHXgxEU8nfs_kAGPVnkqiB_BFsaKJbLrbX_LtHSZKfKcnFdHfvuOIP0ZZpkJnrgnYNOSs_wIkpNAwBUlyj_Qqb8vbaUcE6SwHNpidIYVwg4IALskdrC_Tg1GazKoAEEdzSoL2pvKQ6n_KQZlhxvDhtPLUJxE7tyvvYOHxSIwThg5XzeTD0QXSK0N8EZvJ-yitb1utux7K6Daw_CotlykWNY9fP5XPwsK649UqodpKqCaZhXA0Jjn3xLYUsjMCESOCQbTM_pbSBzp5h5Q0vSZiAsbpRP6FDHUYoq7fhK0fIcy5Hk5gbeuVhqy0C5a3s0W3eeyN1b0lXbCMykB5JVAqrZUj8NZEEBUAA7lIniN2MXbTot9-BYJ77KAs79quXJQK5EVjauldlE_ZEjHJBF18bhFVnUySpTG6VCqVCUVIBycEYPXGcmib_8OcW1RnsrJkKSq0P3_D6wG966n4lRyxnIwnHA-ERbZPw4s_pjUYntGJRnXxzTZwe6DxNETKzP0atCLS9f6PkcxTA
+@token = CfDJ8JY-0T_h_shGpkwETFYpi1u88Rjjm0H12t5AZ2hCw84-F_nOGdrygV8srehoNBV96iY8niEcIqY9vy6IXAgEvQ_VS0KCbH76hTygYFMnzgSDzgrgp1Z0Ee-JD_KkV6G-rqcaab6haioR1DEaljV733KmnjvHEdWNW5B5Xo80Iqy4SgnzDZaB86OfKXXXMyIOW9uxIRaq9c362R80QZUGtxk9CK3oMlu6tyTO9RXe7DcNvXm-khQN7-W-OD8Y49Lxhqeb692g3SAuNFaEnbQl-ZK-fIgJcOIW7rmlZq75bsYEdKkELitizKlD-3JyQj0_6C69TXZ5AXrn88Rft6FmDlIDFIWf01l3vJQoGZMpQPRf1XAoehPsjy8vpWiTsOw9ZsizFZkdP_qbP4m9DmX0VLnPYMpoz9wh9VAtZq4MTR15duOekHFLPB0YWdWQup9auTGdPKhDi_hVNSKp4uBhvPCAoMdtPJ2Itlkx4bw-LVjTrSO8FBSaUcocLizVg3GmkEnyfqs-DGnp6nJJPS9i_6SADgrgm-0NGU7ZmzK75rS2fmhLrcjj2gjY1X20XaCQwR87GyO4Hbj1gJfcKijqAliJCqqMSlKY3SDSZsyLe8D9HkVYM_tLcbgAWCokKhbcaY9m83wHSRAe3v4IvRtCZ-yKz7pbR_xtzFBcvs5B_Ecm_OWP74pl80ptatyr75t8YjKRyacz5VfPSBL8xYGmBBEa1movyZsZPWcnTQ_X_kNNAWReC4XYIPDdx7o1LPMOk-gNmHjo3iZybkpTvj7hLs2wReyR8Ddp9gNVLRk3Xn4wNY8ahgVkZrf-dcHQq4-1Fyt9k-JUJfmxvGCZ94U0GIUtxMB5R47W1qzwF5wEt1XrM8ljylAo5MlkxGt6wnCSBA
 
 ###
 
@@ -32,16 +32,18 @@ Content-Type: application/json
 
 ###
 
-DELETE {{Restaurants.API_HostAddress}}/api/restaurants/7
-
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/10
+Authorization: Bearer {{token}}
 ###
 
-Patch {{Restaurants.API_HostAddress}}/api/restaurants/5
+Patch {{Restaurants.API_HostAddress}}/api/restaurants/11
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "name": "The Golden Spoon 2",
-  "description": "Fine dining restaurant with modern European cuisine"
+  "name": "Owner Created 2",
+  "description": "A typical US diner",
+  "hasDelivery": true
 }
 
 ###
