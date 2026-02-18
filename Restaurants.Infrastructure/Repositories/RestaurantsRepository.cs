@@ -1,7 +1,8 @@
-﻿using Restaurants.Domain.Repositories;
-using Restaurants.Infrastructure.Persistence;
-using Restaurants.Domain.Entities;
+﻿using Azure.Core;
 using Microsoft.EntityFrameworkCore;
+using Restaurants.Domain.Entities;
+using Restaurants.Domain.Repositories;
+using Restaurants.Infrastructure.Persistence;
 
 namespace Restaurants.Infrastructure.Repositories;
 internal class RestaurantsRepository(RestaurantDbContext dbContext): IRestaurantsRepository
@@ -9,6 +10,18 @@ internal class RestaurantsRepository(RestaurantDbContext dbContext): IRestaurant
     public async Task<IEnumerable<Restaurant>> GetAllAsync()
     {
         var restaurants = await dbContext.Restaurants.ToListAsync();
+        return restaurants;
+    }
+
+    public async Task<IEnumerable<Restaurant>> GetAllMatchingAsync(string? searchPhrase)
+    {
+        var searchPhraseLower = searchPhrase?.ToLower();
+
+        var restaurants = await dbContext.Restaurants
+            .Where(r => (searchPhraseLower == null || (r.Name.ToLower().Contains(searchPhraseLower) 
+                || r.Description.ToLower().Contains(searchPhraseLower))))
+            .ToListAsync();
+
         return restaurants;
     }
 
